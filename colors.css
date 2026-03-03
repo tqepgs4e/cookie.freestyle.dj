@@ -1,0 +1,18 @@
+:root, ::backdrop{
+    --keyColor: oklch(0.5 0.12 240);
+
+    --primary: oklch(0.5 0.12 240);
+    --onPrimary: oklch(0.2 0.05 240);
+
+    --secondary:;
+    --onSecondary:;
+
+    --background:;
+    --onBackground:;
+    
+    --surface:;
+    --onSurface:;
+
+    --error:;
+    --onError:;
+}
