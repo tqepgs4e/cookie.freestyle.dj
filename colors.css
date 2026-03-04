@@ -7,12 +7,27 @@
     --secondary: oklch(0.7 0.14 200);
     --onSecondary: oklch(0.2 0.02 200);
 
+    --tertiary: oklch(0.7 0.14 280);
+    --onTertiary: oklch(0.2 0.02 280);
+
     --background: oklch(0.2 0.02 240);
     --onBackground: oklch(0.8 0.04 240);
     
     --surface: oklch(0.3 0.04 240);
     --onSurface: oklch(0.7 0.04 240);
-
+    
     --error: oklch(0.62 0.24 30);
     --onError: oklch(0.8 0.04 30);
+
+    --green: oklch(0.7 0.14 140);
+    --onGreen: oklch(0.2 0.02 140);
+
+    --yellow: oklch(0.7 0.14 90);
+    --onYellow: oklch(0.2 0.02 90);
+
+    --orange: oklch(0.7 0.14 60);
+    --onOrange: oklch(0.2 0.02 60);
+
+    --red: oklch(0.7 0.14 30);
+    --onRed: oklch(0.02 0.02 30);
 }
