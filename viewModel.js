@@ -18,7 +18,7 @@ const viewModel = {
         model.send(authToken)
             .then(data => {
                 console.log(data);
-                this.test = data.message;
+                this.test = data.response;
             })
             .catch(error => {
                 console.error('Error fetching data:', error);

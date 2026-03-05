@@ -9,7 +9,7 @@ const model = {
                 },
                 body: JSON.stringify({
                     model: "openai/gpt-oss-120b",
-                    msghistory: "%5B%7B%22role%22%3A%22user%22%2C%22content%22%3A%22Explain%20why%20fast%20language%20models%20matter.%22%7D%5D"
+                    msghistory: [{ role: "user", content: "Explain why fast language models matter." }]
                 })
             }
         ).then(response => response.json());
