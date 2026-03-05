@@ -1,0 +1,17 @@
+const model = {
+    send: function(authToken) {
+        return fetch(
+            "smart-cookie-gateway-production.up.railway.app", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authentication": "Bearer " + authToken
+                },
+                params: {
+                    model: "openai/gpt-oss-120b",
+                    msghistory: "%5B%7B%22role%22%3A%22user%22%2C%22content%22%3A%22Explain%20why%20fast%20language%20models%20matter.%22%7D%5D"
+                }
+            }
+        ).then(response => response.json());
+    }
+};
