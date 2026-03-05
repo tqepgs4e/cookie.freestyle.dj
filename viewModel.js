@@ -14,7 +14,8 @@ const viewModel = {
     },
 
     send: function() {
-        const authToken = document.getElementById("test2").textContent;
+        const authToken = document.getElementById("apikey").textContent;
+        this.test = "Loading...";
         model.send(authToken)
             .then(data => {
                 console.log(data);
@@ -22,7 +23,9 @@ const viewModel = {
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
+                viewModel.test = "Error: " + error.message;
             });
     }
 };
 
+document.getElementById("testButton").addEventListener("click", () => viewModel.send());
