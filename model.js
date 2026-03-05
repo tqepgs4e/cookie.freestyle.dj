@@ -1,7 +1,7 @@
 const model = {
     send: function(authToken) {
         return fetch(
-            "smart-cookie-gateway-production.up.railway.app", {
+            "https://smart-cookie-gateway-production.up.railway.app/chat", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
