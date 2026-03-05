@@ -15,8 +15,9 @@ const viewModel = {
 
     send: function() {
         const authToken = document.getElementById("apikey").textContent;
+        const inputMessage = document.getElementById("input").textContent;
         this.test = "Loading...";
-        model.send(authToken)
+        model.send(authToken, inputMessage)
             .then(data => {
                 console.log(data);
                 this.test = data.response;
