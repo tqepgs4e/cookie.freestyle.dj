@@ -26,6 +26,21 @@ h1{
     color: var(--onSurface);
 }
 
+.lit{
+    color: var(--primary);
+}
+
+.nomargin{
+    margin: 0px;
+}
+
+.chatbotmessage{
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: var(--onBackground);
+    margin: 0px;
+}
+
 .tempeditable{
     font-family: var(--font-body);
     font-size: 1.25rem;
@@ -105,9 +120,15 @@ h1{
 
 .layout{
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 360px 1fr;
     height: 100vh;
     transition: grid-template-columns 300ms ease;
+}
+
+@media (max-width: 1048px) {
+    .layout {
+        grid-template-columns: 240px 1fr;
+    }
 }
 
 @media (max-width: 928px) {
@@ -119,6 +140,7 @@ h1{
     .sidebar {
         opacity: 0;
         transition: 300ms ease;
+        pointer-events: none;
     }
 }
 
@@ -133,6 +155,11 @@ h1{
     color: var(--onSurface);
     padding: var(--padding);
     border-radius: 0px var(--radius) var(--radius) 0px;
+
+    display: grid;
+    grid-template-rows: 72px 1fr 96px;
+    gap: var(--padding);
+
 }
 
 .main{
@@ -143,6 +170,10 @@ h1{
     background-color: var(--background);
     color: var(--onSurface);
     padding: var(--padding);
+
+    width: calc(100% - var(--padding)*2);
+    max-width: 1028px;
+    margin: 0px auto;
 }
 
 .top{
@@ -155,10 +186,71 @@ h1{
     background-color: var(--surface);
     border-radius: var(--radius);
     padding: var(--padding);
+    max-height: calc(100vh - 168px - 96px - 24px*6);
+    overflow-y: scroll;
+    position: relative;
+
+    scrollbar-width: none;
+    scrollbar-color: var(--primary) transparent;
 }
 
 .bottom{
     background-color: var(--surface);
     border-radius: var(--radius);
-    padding: var(--padding);
+    padding: calc(var(--padding)*0.75);
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 60px 1fr 60px;
+    gap: calc(var(--padding)*0.5);
+
+}
+
+.pill,
+.invpill,
+.litpill,
+.pill96,
+.placeholder60
+{
+    height: 72px;
+    border-radius: var(--radius);
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    cursor: pointer;
+    border-width: 0px;
+}
+
+
+.pill{
+    background-color: var(--surface);
+    color: var(--onSurface);
+}
+
+.invpill{
+    background-color: var(--background);
+    color: var(--onBackground);
+}
+
+.litpill{
+    background-color: var(--primary);
+    color: var(--onPrimary);
+}
+
+.pill96{
+    height: 96px !important;
+}
+
+.placeholder60{
+    width: 60px;
+    height: 60px;
+}
+
+.chatlist{
+    background-color: var(--background);
+
+    border-radius: var(--radius);
 }

@@ -45,25 +45,40 @@
             <path d="M15.2335 5.21967C15.5263 5.51256 15.5263 5.98744 15.2335 6.28033L9.51379 12L15.2335 17.7197C15.5263 18.0126 15.5263 18.4874 15.2335 18.7803C14.9406 19.0732 14.4657 19.0732 14.1728 18.7803L7.92279 12.5303C7.6299 12.2374 7.6299 11.7626 7.92279 11.4697L14.1728 5.21967C14.4657 4.92678 14.9406 4.92678 15.2335 5.21967Z" fill="var(--onBackground)"/>
         </svg>
 
-        <h1 class = "big">Enter your API key:</h1>
-
         <div class = "layout">
+
             <div class = "sidebar">
-                <h1 class = "big">Sidebar</h1>
+                <div class = "invpill">
+                    <h1 class = "big lit">New Chat</h1>
+                </div>
+                <div class = "chatlist">
+                    <div class = "litpill">Chat 1</div>
+                    <div class = "invpill">Chat 2</div>
+                </div>
+                <div class = "invpill pill96">
+                    <h1 class = "big lit nomargin">ENTER API KEY:</h1>
+                    <h1 class = "big nomargin" contenteditable = "true" id = "apikey">MYAPIKEY</h1>
+                </div>
             </div>
+
             <div class = "main">
                 <div class = "top">
-                    <h1 class = "big">Please enter your API key:</h1>
-                    <h1 id = "apikey" contenteditable = "true" class = "tempeditable">MYAPIKEY</h1>
-                    <button id = "testButton">"SEND" A MESSAGE!</button>
+                    <h1 class = "big">Welcome to Smart Cookie AI!</h1>
                 </div>
                 <div class = "chat">
-                    <h1 id = "test" class = "big"></h1>
+                    <h1 id = "test" class = "chatbotmessage"></h1>
                 </div>
                 <div class = "bottom">
+                    <div class = "placeholder60 invpill"></div>
                     <h1 id = "input" contenteditable = "true" class = "big">Type your message here...</h1>
+                    <button id = "testButton" class = "placeholder60 litpill">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--onPrimary)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.01 21L23 12L2.01 3V10L17 12L2.01 14V21Z" fill="var(--onPrimary)"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
+
         </div>
 
         <script type="text/javascript" src="model.js"></script>
