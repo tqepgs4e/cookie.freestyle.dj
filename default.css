@@ -9,20 +9,18 @@
 :root, ::backdrop{
     --font-head: "Atkinson Hyperlegible Next", sans-serif;
     --font-body: "Inter", sans-serif;
-    --radius: 30px;
-    --padding: 24px;
+
+    --radius: 24px;
+    --padding: 16px;
+    --font-size: 1rem;
 
     --hue: 240;
-    animation: hue-rotate 30s ease-in-out infinite alternate;
+    animation: hue-rotate 3s ease-in-out infinite alternate;
 }
 
 @keyframes hue-rotate{
-    from{
-        --hue: 230;
-    }
-    to{
-        --hue: 250;
-    }
+    from{--hue: 0;}
+    to{--hue: 360;}
 }
 
 body{
@@ -39,7 +37,7 @@ h1{
 
 .big{
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: var(--font-size);
     color: var(--onSurface);
 }
 
@@ -53,14 +51,14 @@ h1{
 
 .chatbotmessage{
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: --font-size;
     color: var(--onBackground);
     margin: 0px;
 }
 
 .tempeditable{
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: --font-size;
     color: var(--onSurface);
 
     border-color: var(--keyColor);
@@ -83,7 +81,7 @@ h1{
     grid-template-rows: repeat(2,1fr);
 
     height: 64px;
-    width: min(704px,calc(100% - 24px));
+    width: min(704px,calc(100% - var(--padding)));
 
     overflow: hidden;
 
@@ -174,7 +172,7 @@ h1{
     padding: var(--padding);
 
     width: calc(100% - var(--padding)*2);
-    max-width: 1028px;
+    max-width: 720px;
     margin: 0px auto;
 }
 
@@ -188,7 +186,7 @@ h1{
     background-color: var(--surface);
     border-radius: var(--radius);
     padding: var(--padding);
-    max-height: calc(100vh - 168px - 96px - 24px*6);
+    max-height: calc(100vh - 168px - 96px - var(--padding)*6);
     overflow-y: scroll;
     position: relative;
 
@@ -222,7 +220,7 @@ h1{
 {
     height: 72px;
     border-radius: var(--radius);
-    font-size: 1.25rem;
+    font-size: --font-size;
     font-weight: 700;
     font-family: var(--font-body);
     display: grid;
