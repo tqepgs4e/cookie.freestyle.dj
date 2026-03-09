@@ -10,7 +10,7 @@
     --font-head: "Atkinson Hyperlegible Next", sans-serif;
     --font-body: "Inter", sans-serif;
 
-    --radius: 24px;
+    --radius: 30px;
     --padding: 16px;
     --font-size: 1rem;
 
@@ -202,7 +202,7 @@ h1{
     display: grid;
     align-items: center;
     grid-template-columns: 60px 1fr 60px;
-    gap: calc(var(--padding)*0.5);
+    gap: calc(var(--padding));
 
 }
 
