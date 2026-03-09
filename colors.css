@@ -1,20 +1,22 @@
 :root, ::backdrop{
-    --keyColor: oklch(0.5 0.1 240);
+    --hue: 240;
 
-    --primary: oklch(0.7 0.14 240);
-    --onPrimary: oklch(0.2 0.02 240);
+    --keyColor: oklch(0.5 0.1 var(--hue));
 
-    --secondary: oklch(0.7 0.14 200);
-    --onSecondary: oklch(0.2 0.02 200);
+    --primary: oklch(0.7 0.14 var(--hue));
+    --onPrimary: oklch(0.2 0.02 var(--hue));
 
-    --tertiary: oklch(0.7 0.14 280);
-    --onTertiary: oklch(0.2 0.02 280);
+    --secondary: oklch(0.7 0.14 calc(var(--hue) - 40));
+    --onSecondary: oklch(0.2 0.02 calc(var(--hue) - 40));
 
-    --background: oklch(0.2 0.02 240);
-    --onBackground: oklch(0.8 0.04 240);
+    --tertiary: oklch(0.7 0.14 calc(var(--hue) + 40));
+    --onTertiary: oklch(0.2 0.02 calc(var(--hue) + 40));
+
+    --background: oklch(0.2 0.02 var(--hue));
+    --onBackground: oklch(0.8 0.04 var(--hue));
     
-    --surface: oklch(0.3 0.04 240);
-    --onSurface: oklch(0.7 0.04 240);
+    --surface: oklch(0.3 0.04 var(--hue));
+    --onSurface: oklch(0.7 0.04 var(--hue));
     
     --error: oklch(0.62 0.24 30);
     --onError: oklch(0.8 0.04 30);
