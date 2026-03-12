@@ -235,28 +235,37 @@ h1{
 }
 
 .chatbotmessage{
-    font-family: var(--font-body);
     font-size: var(--font-size);
+    font-weight: 700;
+    font-family: var(--font-body);
+
     color: var(--onBackground);
+
     margin: 0px;
+
     padding: var(--padding);
-    align-self: start;
+    align-self: flex-start;
 }
 
 .usermessage{
     min-height: calc(var(--pill-height) - var(--padding) * 2);
     border-radius: var(--radius);
+    
+    background-color: var(--primary);
+    color: var(--onPrimary);
+
     font-size: var(--font-size);
     font-weight: 700;
     font-family: var(--font-body);
+
     display: grid;
     align-content: center;
     justify-items: center;
     cursor: pointer;
+
     border-width: 0px;
-    background-color: var(--primary);
-    color: var(--onPrimary);
     border-style: solid;
+
     width: fit-content;
     padding: var(--padding);
     align-self: flex-end;
