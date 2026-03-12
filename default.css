@@ -39,7 +39,7 @@
     --font-head: "Atkinson Hyperlegible Next", sans-serif;
     --font-body: "Inter", sans-serif;
 
-    --radius: calc(80px / 3);
+    --radius: calc(80px / 3); /* from --pill-height which was 72px, scaled down to 60px */
     --padding: 16px;
 
     --pill-height: 60px;
@@ -343,7 +343,7 @@ h1{
     z-index: 5;
     position: relative;
 
-    transition: scale 50ms ease, --active-opacity 50ms ease, box-shadow 50ms ease, filter 50ms ease;
+    transition: scale 0ms ease, --active-opacity 0ms ease, box-shadow 0ms ease, filter 0ms ease;
 }
 
 .pill    { --bg-base: var(--surface);    color: var(--onSurface); }
