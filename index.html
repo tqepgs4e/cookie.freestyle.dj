@@ -14,16 +14,15 @@
         <div class = "layout">
 
             <div class = "sidebar">
-                <div class = "invpill">
+                <button class = "invpill">
                     <h1 class = "big lit">New Chat</h1>
-                </div>
+                </button>
                 <div class = "chatlist">
-                    <div class = "litpill">Chat 1</div>
-                    <div class = "invpill">Chat 2</div>
+                    <button class = "litpill">Chat 1</button>
+                    <button class = "invpill">Chat 2</button>
                 </div>
-                <div class = "invpill pill96">
-                    <h1 class = "big lit nomargin">ENTER API KEY:</h1>
-                    <h1 class = "big nomargin" contenteditable = "true" id = "apikey">MYAPIKEY</h1>
+                <div class = "invpill pill96" onclick = "viewModel.auth.open()">
+                    <h1 class = "big lit nomargin">Log in</h1>
                 </div>
             </div>
 
@@ -58,22 +57,11 @@
                     </div>
                 </div>
                 <div class = "chat" id = "chat">
-                    <div class = "usermessage">Hello! What can you help me with?</div>
-                    <div class = "chatbotmessage">Good morning! I can help you with anything you need! 😊</div>
-                    <div class = "usermessage">Can you help me write code?</div>
-                    <div class = "chatbotmessage">Of course! What kind of code are you looking to write?</div>
-                    <div class = "usermessage">I want to write a website for my business.</div>
-                    <div class = "chatbotmessage">Great! I can help you with that. What kind of business do you have?</div>
-                    <div class = "usermessage">I have a bakery.</div>
-                    <div class = "chatbotmessage">Yum! A bakery website sounds delicious! Do you have any specific features in mind for your website?</div>
-                    <div class = "usermessage">No, now help me with this thing:</div>
-                    <div class = "chatbotmessage">Sure thing! I'll add my answer right below 👇</div>
-
-                    <div id = "test" class = "chatbotmessage"></div>
+                    
                 </div>
                 <div class = "bottom">
-                    <div class = "placeholder60 invpill"></div>
-                    <h1 id = "input" contenteditable = "true" class = "big">Type your message here...</h1>
+                    <button class = "placeholder60 invpill"></button>
+                    <input type = "text" id = "input" class = "chatinput" placeholder="Ask a question..." value=""></input>
                     <button id = "testButton" class = "placeholder60 litpill">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--onPrimary)" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.01 21L23 12L2.01 3V10L17 12L2.01 14V21Z" fill="var(--onPrimary)"/>
@@ -83,6 +71,11 @@
             </div>
 
         </div>
+        
+        <dialog class="dialog logindialog" id="auth">
+            <input type="text" class="textinput" id="apikey" placeholder="API Key" value="">
+            <button class="litpill" id="authclose" onclick = "viewModel.auth.close()">Done</button>
+        </dialog>
 
         <script type="text/javascript" src="model.js"></script>
         <script type="text/javascript" src="viewModel.js"></script>

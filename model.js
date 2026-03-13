@@ -1,5 +1,5 @@
 const model = {
-    send: function(authToken, inputMessage) {
+    send: function(authToken, conversation) {
         return fetch(
             "https://smart-cookie-gateway-production.up.railway.app/chat", {
                 method: "POST",
@@ -8,8 +8,8 @@ const model = {
                     "Authorization": "Bearer " + authToken
                 },
                 body: JSON.stringify({
+                    msghistory: conversation,
                     model: "openai/gpt-oss-120b",
-                    msghistory: [{ role: "user", content: inputMessage }]
                 })
             }
         ).then(response => response.json());
