@@ -40,24 +40,9 @@ const viewModel = {
             return;
         }
 
-        function animateLetters(text, animClass = 'fadein') {
-        const segmenter = new Intl.Segmenter();
-        const spans = text
-            .split(' ')
-            .map((word, wi) => {
-            const letters = [...segmenter.segment(word)]
-                .map(s => s.segment)
-                .map((c, li) => `<span style="--i:${wi * 10 + li}" class="letter">${c}</span>`)
-                .join('');
-            return `<span style="white-space:nowrap">${letters}</span>`;
-            })
-            .join(' ');
-        return `<span class="animated-text ${animClass}">${spans}</span>`;
-        }
-
         this._conversation.push(message);
         if (this.El.chat) {
-            const msgEl = `<div class="${message.role === 'user' ? 'usermessage' : 'chatbotmessage'}">${animateLetters(message.content)}</div>`;
+            const msgEl = `<div class="${message.role === 'user' ? 'usermessage' : 'chatbotmessage'}">${message.content}</div>`;
             this.El.chat.insertAdjacentHTML('beforeend', msgEl);
             this.El.chat.scrollTo({
                 top: this.El.chat.scrollHeight,
@@ -68,7 +53,11 @@ const viewModel = {
 
     unMessage: function() {
         this._conversation.pop();
-        document.getElementById("chat").lastElementChild?.remove();
+        let last = document.getElementById("chat").lastElementChild;
+        while (last?.classList.contains("removing")) last = last.previousElementSibling;
+        if (!last) return;
+        requestAnimationFrame(() => last.classList.add("removing"));
+        last.addEventListener("animationend", () => last.remove(), { once: true });
     },
 
     send: function() {

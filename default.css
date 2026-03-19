@@ -49,7 +49,7 @@
     --font-size: 1rem;
 
     --hue: 240;
-    animation: hue-rotate 20s ease-in-out infinite alternate;
+    animation: hue-rotate 2s ease-in-out infinite alternate;
     transition: --pill-height 300ms ease, --cbox-height 300ms ease, --hbtn-height 300ms ease, --radius 300ms ease, --padding 300ms ease;
 }
 
@@ -361,33 +361,47 @@ h1{
     padding: var(--padding);
     align-self: flex-end;
 
-    transition: all 700ms cubic-bezier(0,1,.8,1);
+    transition: opacity 700ms ease,
+                transform 700ms ease,
+                box-shadow 700ms ease,
+                filter 700ms ease,
+                color 0s ease,
+                background-color 0s ease;
 }
 
-.letter{
-    display: inline-block;
-    will-change: transform, opacity;
+.removing {
+    animation: removing 1400ms ease forwards;
 }
 
-.animated-text.fadein .letter {
-  display: inline-block;
-  opacity: 0;
-  animation: fadein 1s ease forwards;
-  animation-delay: calc(var(--i) * 3ms);
-}
-
-@keyframes fadein{
+@keyframes removing{
     from{
-        opacity: 0;
-        transform: translateY(0px) translateX(-8px);
-    }
-    20%{
         opacity: 1;
-        transform: translateY(0px) translateX(8px);
+        box-shadow: inset 0 0 0 0px var(--surface);
+        transform: translateY(0px) scale(1);
+        filter: blur(0px);
+        min-height: calc(var(--pill-height) - var(--padding) * 2);
+        max-height: fit-content;
+        padding: var(--padding);
+        overflow: hidden;
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(20px) scale(1.1);
+        filter: blur(8px);
+        min-height: calc(var(--pill-height) - var(--padding) * 2);
+        max-height: fit-content;
+        padding: 0px;
+        margin-bottom: 0px;
+        overflow: hidden;
     }
     to{
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 0;
+        filter: none;
+        min-height: 0px;
+        max-height: 0px;
+        padding: 0px;
+        margin-bottom: calc(var(--padding) * -1);
+        overflow: hidden;
     }
 }
 
