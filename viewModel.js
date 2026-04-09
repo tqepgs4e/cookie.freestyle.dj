@@ -47,7 +47,7 @@ const viewModel = {
             return;
         }
 
-        if (message.role == "assistant" && message.content == "{deletechat}") {
+        if (message.role == "assistant" && message.content == "{{deletechat}}") {
             viewModel.clearMessages();
             return;
         }
