@@ -31,12 +31,24 @@ const viewModel = {
         close: function() {viewModel.El.auth.close();}
     },
 
-    
+    clearMessages: function() {
+        const messages = this.El.chat.querySelectorAll(':scope > div');
+        messages.forEach(el => {
+            requestAnimationFrame(() => el.classList.add("removing"));
+            el.addEventListener("animationend", () => el.remove(), { once: true });
+        });
+        this._conversation = [];
+    },
     
     addMessage: function(message) {
 
         if (!message || !message.role || !message.content) {
             console.error('Invalid message format (must contain a role and a content field):', message);
+            return;
+        }
+
+        if (message.role == "assistant" && message.content == "{deletechat}") {
+            viewModel.clearMessages();
             return;
         }
 
